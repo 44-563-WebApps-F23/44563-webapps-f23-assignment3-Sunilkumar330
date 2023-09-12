@@ -47,6 +47,17 @@
         </tr>
     </table>
     <hr>
-    
+    <h3>Code</h3>
+    <blockquote>Remove Admin Bar For Subscribers</blockquote>
+    <a href="https://css-tricks.com/snippets/wordpress/remove-admin-bar-for-subscribers/">Link to question</a>
+    <pre>
+        add_action('set_current_user', 'cc_hide_admin_bar');
+function cc_hide_admin_bar() {
+  if (!current_user_can('edit_posts')) {
+    show_admin_bar(false);
+  }
+}
+    </pre>
     
 </body>
+</html>
